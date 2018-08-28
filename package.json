@@ -1,12 +1,13 @@
 {
   "name": "comparators",
-  "version": "2.0.3",
+  "version": "2.0.3-module",
   "repository": {
     "type": "git",
     "url": "https://github.com/spencerwi/Comparators.js.git"
   },
   "description": "Provides chainable comparator-function generators a la Java 8 Comparators",
   "main": "dist/comparators.js",
+  "module": "module/comparators.js",
   "typings": "dist/comparators.d.ts",
   "keywords": [
     "comparator",
@@ -16,7 +17,7 @@
   "scripts": {
     "pretest": "./node_modules/typescript/bin/tsc",
     "test": "./node_modules/painless/bin/painless -r spec test/comparators.spec.js",
-    "posttest": "./node_modules/uglify-js/bin/uglifyjs dist/comparators.js --compress -o dist/comparators.min.js"
+    "posttest": "./node_modules/uglify-js/bin/uglifyjs dist/comparators.js --compress -o dist/comparators.min.js && tsc -p tsconfig.module.json"
   },
   "author": "Spencer Williams",
   "license": "MIT",
